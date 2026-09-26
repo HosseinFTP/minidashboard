@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mini Dashboard
 
-## Getting Started
+یه مینی‌داشبورد مدیریت کاربران که با Next.js و Tailwind ساختم.
 
-First, run the development server:
+## چرا ساختمش؟
 
-```bash
+می‌خواستم یه پروژه‌ی واقعی و کامل داشته باشم که توش همه‌چیز از صفر باشه — نه فقط UI، نه فقط فرم. چیزی که واقعا بشه بهش گفت «اپلیکیشن».
+
+هدفم این بود که با App Router کار کنم و یه UI تمیز و حرفه‌ای بسازم که هم ظاهرش خوب باشه، هم منطق واقعی پشتش باشه.
+
+## چی داره؟
+
+احراز هویت کامل با ثبت‌نام و ورود. هر کاربری که ثبت‌نام می‌کنه، به لیست کاربران اضافه می‌شه و می‌تونه با همون اطلاعات لاگین کنه.
+
+مدیریت کاربران با CRUD کامل — افزودن، ویرایش، حذف با دیالوگ تأیید. سرچ زنده روی نام و ایمیل، فیلتر بر اساس نقش و وضعیت، و آمار زنده بالای صفحه.
+
+سه سطح دسترسی داره: مدیر همه‌چیز رو می‌بینه، ویرایشگر کاربران و آمار رو داره ولی تنظیمات رو نه، و کاربر عادی فقط پنل شخصی خودش رو. منو بر اساس نقش فیلتر می‌شه و اگه کسی غیرمجاز بره جایی، خودکار ریدایرکت می‌شه.
+
+UI کامل ریسپانسیوه، RTL با فونت ایران‌یکان، دارک مود داره و تو موبایل سایدبارش کشویی می‌شه.
+
+## تکنولوژی‌ها
+
+Next.js 16 با App Router، JavaScript، Tailwind CSS 4، lucide-react برای آیکون‌ها، next-themes برای دارک مود، و localStorage به‌جای دیتابیس چون بک‌اند نداره.
+
+## اجرا
+
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+بعد برو به http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## اکانت‌های تست
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+رمز همه 123456
 
-## Learn More
+ali@example.com — مدیر
+reza@example.com — ویرایشگر
+sara@example.com — کاربر
 
-To learn more about Next.js, take a look at the following resources:
+## چند تا نکته
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+رمزها plain text تو localStorage ذخیره می‌شن. این فقط چون پروژه mock هست — تو پروژه واقعی حتما باید hash بشن.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+دیتا تو localStorage هر مرورگر جداست، پس اگه با مرورگر دیگه باز کنی دیتای قبلی رو نمی‌بینی. برای ریست کامل هم تو console مرورگر localStorage.clear() بزن.
