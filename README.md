@@ -42,3 +42,4 @@ sara@example.com — کاربر
 رمزها plain text تو localStorage ذخیره می‌شن. این فقط چون پروژه mock هست — تو پروژه واقعی حتما باید hash بشن.
 
 دیتا تو localStorage هر مرورگر جداست، پس اگه با مرورگر دیگه باز کنی دیتای قبلی رو نمی‌بینی. برای ریست کامل هم تو console مرورگر localStorage.clear() بزن.
+
